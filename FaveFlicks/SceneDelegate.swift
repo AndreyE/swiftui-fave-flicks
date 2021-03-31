@@ -31,6 +31,7 @@
 /// THE SOFTWARE.
 
 import SwiftUI
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
@@ -40,7 +41,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     willConnectTo session: UISceneSession,
     options connectionOptions: UIScene.ConnectionOptions
   ) {
-    let contentView = MovieList()
+    let context = peristentContainer.viewContext
+    let contentView = MovieList().environment(\.managedObjectContext, context)
 
     if let windowScene = scene as? UIWindowScene {
       let window = UIWindow(windowScene: windowScene)
@@ -48,5 +50,34 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       self.window = window
       window.makeKeyAndVisible()
     }
+  }
+  
+  lazy var peristentContainer: NSPersistentContainer = {
+    let container = NSPersistentContainer(name: "FaveFlicks")
+    
+    container.loadPersistentStores {_, error in
+      if let error = error as NSError? {
+        fatalError("Unresolved error \(error), \(error.userInfo)")
+      }
+    }
+    
+    return container
+  }()
+  
+  func saveContext() {
+    let context = peristentContainer.viewContext
+    
+    if context.hasChanges {
+      do {
+        try context.save()
+      } catch {
+        let nserror = error as NSError
+        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+      }
+    }
+  }
+  
+  func sceneDidEnterBackground(_ scene: UIScene) {
+    saveContext()
   }
 }
