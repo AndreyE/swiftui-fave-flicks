@@ -34,7 +34,7 @@ import SwiftUI
 
 // swiftlint:disable multiple_closures_with_trailing_closure
 struct MovieList: View {
-  @State var movies = MovieList.makeMovieDefaults()
+  @State var movies = []
   @State var isPresented = false
 
   var body: some View {
@@ -65,25 +65,7 @@ struct MovieList: View {
   }
 
   func addMovie(title: String, genre: String, releaseDate: Date) {
-    let newMovie = Movie(title: title, genre: genre, releaseDate: releaseDate)
-    movies.append(newMovie)
-  }
-
-  static func makeMovieDefaults() -> [Movie] {
-    let theRoom = Movie(
-      title: "The Room",
-      genre: "Drama",
-      releaseDate: Date(timeIntervalSince1970: 1056730041))
-    let sharknado = Movie(
-      title: "Sharknado",
-      genre: "Action, Adventure",
-      releaseDate: Date(timeIntervalSince1970: 1373558841))
-    let kungPow = Movie(
-      title: "Kung Pow: Enter the Fist",
-      genre: "Action, Comedy",
-      releaseDate: Date(timeIntervalSince1970: 1011974841))
-
-    return [theRoom, sharknado, kungPow]
+    // TODO
   }
 }
 

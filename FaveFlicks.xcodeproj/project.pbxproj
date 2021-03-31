@@ -14,7 +14,6 @@
 		95710F80240A889600911BD1 /* MovieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95710F7B240A889600911BD1 /* MovieRow.swift */; };
 		95710F81240A889600911BD1 /* AddMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95710F7C240A889600911BD1 /* AddMovie.swift */; };
 		95710F83240A889600911BD1 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95710F7E240A889600911BD1 /* MovieList.swift */; };
-		95710F84240A889600911BD1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95710F7F240A889600911BD1 /* Movie.swift */; };
 		95710F86240A88A300911BD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95710F85240A88A300911BD1 /* Assets.xcassets */; };
 		95710F89240A88B300911BD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95710F87240A88B300911BD1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		95710F7C240A889600911BD1 /* AddMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMovie.swift; sourceTree = "<group>"; };
 		95710F7D240A889600911BD1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95710F7E240A889600911BD1 /* MovieList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
-		95710F7F240A889600911BD1 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		95710F85240A88A300911BD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95710F88240A88B300911BD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				95710F7C240A889600911BD1 /* AddMovie.swift */,
-				95710F7F240A889600911BD1 /* Movie.swift */,
 				95710F7E240A889600911BD1 /* MovieList.swift */,
 				95710F7B240A889600911BD1 /* MovieRow.swift */,
 				95710F64240A87F700911BD1 /* AppDelegate.swift */,
@@ -181,7 +178,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95710F84240A889600911BD1 /* Movie.swift in Sources */,
 				95710F83240A889600911BD1 /* MovieList.swift in Sources */,
 				95710F6A240A87F700911BD1 /* FaveFlicks.xcdatamodeld in Sources */,
 				95710F80240A889600911BD1 /* MovieRow.swift in Sources */,
