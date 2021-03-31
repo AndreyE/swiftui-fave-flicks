@@ -67,7 +67,11 @@ struct MovieList: View {
   }
 
   func deleteMovie(at offsets: IndexSet) {
-    // TODO
+    offsets.forEach { idx in
+      let movie = self.movies[idx]
+      self.managedObjectContext.delete(movie)
+    }
+    saveContext()
   }
 
   func addMovie(title: String, genre: String, releaseDate: Date) {
