@@ -34,7 +34,8 @@ import SwiftUI
 
 // swiftlint:disable multiple_closures_with_trailing_closure
 struct MovieList: View {
-  @State var movies = []
+  @State var movies: [Movie] = []
+  @Environment(\.managedObjectContext) var managedObjectContext
   @State var isPresented = false
 
   var body: some View {
@@ -65,7 +66,21 @@ struct MovieList: View {
   }
 
   func addMovie(title: String, genre: String, releaseDate: Date) {
-    // TODO
+    let newMovie = Movie(context: managedObjectContext)
+    
+    newMovie.title = title
+    newMovie.genre = genre
+    newMovie.releaseDate = releaseDate
+    
+    saveContext()
+  }
+  
+  func saveContext() {
+    do{
+      try managedObjectContext.save()
+    } catch {
+      print("Error saving managed object context: \(error)")
+    }
   }
 }
 
