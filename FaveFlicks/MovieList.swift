@@ -34,7 +34,12 @@ import SwiftUI
 
 // swiftlint:disable multiple_closures_with_trailing_closure
 struct MovieList: View {
-  @State var movies: [Movie] = []
+  @FetchRequest(
+    entity: Movie.entity(),
+    sortDescriptors: [NSSortDescriptor(keyPath: \Movie.title, ascending: true)]
+    // predicate: NSPredicate(format: "genre contains 'Action'") for filtering
+  ) var movies: FetchedResults<Movie>
+  
   @Environment(\.managedObjectContext) var managedObjectContext
   @State var isPresented = false
 
@@ -62,7 +67,7 @@ struct MovieList: View {
   }
 
   func deleteMovie(at offsets: IndexSet) {
-    movies.remove(atOffsets: offsets)
+    // TODO
   }
 
   func addMovie(title: String, genre: String, releaseDate: Date) {
